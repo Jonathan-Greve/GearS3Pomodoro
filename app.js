@@ -17,19 +17,31 @@
 
 var TEXT_START = "Start";
 var TEXT_STOP = "Stop";
+var SEC;
+var MIN;
+var HOUR;
 
-var timeInfo;
 var timerStartBtn;
+var resetBtn
+
+var timeSec;
+var timeMin;
+var timeHour;
 
 function init() {
     console.log("init() called");
-    alert("Ning v2.34");
 
     timerStartBtn = document.getElementById('timer-start-btn');
-    timeInfo = document.getElementById('time-info');
+    resetBtn = document.getElementById('btn-reset');
+    
+    timeSec = document.getElementById('text-main-second');
+    timeMin = document.getElementById('text-main-minute');
+    timeHour = document.getElementById('text-main-hour');
 
 
     timerStartBtn.addEventListener("click", onTimerStartBtnClick);
+    resetBtn.addEventListener("click", resetTimer);
+    
 }
 
 function onTimerStartBtnClick() {
@@ -45,15 +57,24 @@ function onTimerStartBtnClick() {
 
 function startTimer() {
 	console.log("startTimer() called");
-	timeInfo.innerHTML = "24:59";
 	timerStartBtn.innerHTML = TEXT_STOP;
+	timeSec.innerHTML = "59";
+	timeMin.innerHTML = "24";
+	timeHour.innerHTML = "00";
 }
 
 function stopTimer() {
 	console.log("stopTimer() called");
-	timeInfo.innerHTML = "25:00";
 	timerStartBtn.innerHTML = TEXT_START;
 }
+
+function resetTimer(){
+	console.log("resetTimer() called");
+	timeSec.innerHTML = "00";
+	timeMin.innerHTML = "25";
+	timeHour.innerHTML = "00";
+}
+
 
 
 

@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta name="viewport" content="width=device-width,user-scalable=no">
-	<title>Circular UI</title>
-	<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
-	<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
-	<!-- load theme file for your application -->
-	<link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>Circular UI</title>
+    <link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
+    <link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
+    <!-- load theme file for your application -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body onload="init()">
-	<div class="ui-page ui-page-active" id="main">
-		<header class="ui-header">
-			<h2 class="ui-title">Pomodoro v0.1</h2>
-		</header>
-		<div class="ui-content content-padding">
-			<p id = "time-info">25:00</p>
-		</div>
-		<div class="ui-content content-padding">
-        	<footer class="ui-footer ui-bottom-button">
-            	<a id="timer-start-btn" class="ui-btn">Start</a> ⓕ
-        	</footer>
-		</div>
-	</div>
-	<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
-	<script type="text/javascript" src="js/circle-helper.js"></script>
-	<script src="app.js"></script>
-	<script src="lowBatteryCheck.js"></script>
+    <!--Main page-->
+    <div class="ui-page ui-page-active" id="main">
+        <header class="ui-header">
+            <h2 class="ui-title">Pomodoro v0.2</h2>
+        </header>
+        <div class="content-main">
+            <div id="box-main-time">
+                <div class="text-time-thin text-time-bold" id="text-main-hour">00</div>
+                <div class="text-time-colon">:</div>
+                <div class="text-time-thin" id="text-main-minute">25</div>
+                <div class="text-time-colon">:</div>
+                <div class="text-time-thin" id="text-main-second">00</div>
+                <div id="btn-reset">Reset</div>
+            </div>
+            <div class="ui-content content-padding">
+                <footer class="ui-footer ui-bottom-button">
+                    <a id="timer-start-btn" class="ui-btn">Start</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
+    <script type="text/javascript" src="js/circle-helper.js"></script>
+    <script src="page.js"></script>
+    <script src="app.js"></script>
+    <script src="lowBatteryCheck.js"></script>
+
+    <!--Timer set page-->
+    <div id="alarm-set-page" class="ui-page" data-enable-page-scroll="false">
+        <div id="indicator" class="ui-page-indicator"></div>
+        <div id="sectionchanger-newalarm" class="ui-content">
+            <div>
+                <section class="ui-section-active">
+                    <!--First page-->
+                </section>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

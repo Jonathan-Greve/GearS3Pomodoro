@@ -7,6 +7,16 @@ body {
     background-color:#222;
 }
 
+.content-main {
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/img2.png");
+    background-size: 360px 360px;
+    background-position: -20px 0px;
+    background-repeat: no-repeat;
+    background-color: white
+}
+
 .contents {
 	display: flex;
 	display: -webkit-flex;
@@ -26,4 +36,46 @@ body {
 	font-weight:bold;
 	font-size:5em;
 	color:#fff;
+}
+
+#box-main-time {
+    position: absolute;
+    left: 100px;
+    top: 120px;
+    width: 200px;
+    height: 100px;
+}
+
+.text-time-bold {
+    font-size: 50.4px;
+    font-weight: bold;
+    line-height: 78px;
+    text-align: center;
+    float: left;
+    color: black;
+}
+
+.text-time-colon {
+    width: 8px;
+    font-size: 28.8px;
+    line-height: 78px;
+    text-align: center;
+    float: left;
+    color: black;
+}
+
+.text-time-thin {
+    font-size: 43.2px;
+    line-height: 78px;
+    text-align: center;
+    float: left;
+    color: black;
+}
+
+#btn-reset {
+    position: absolute;
+    left: 38px;
+    top: 60px;
+    width: 115px;
+    height: 38px;
 }
